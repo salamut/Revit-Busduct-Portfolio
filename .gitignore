@@ -1,0 +1,10 @@
+# Revit backup / temp files
+*.0???.rvt
+*.0???.rfa
+*.rws
+*.slog
+*.dat
+_tmp/
+backup/
+Thumbs.db
+desktop.ini
