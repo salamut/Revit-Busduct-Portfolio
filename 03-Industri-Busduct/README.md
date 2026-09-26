@@ -62,7 +62,9 @@ Full set: [`sheets/Industri_Busduct_Sheets.pdf`](sheets/Industri_Busduct_Sheets.
 - **Busduct** — Revit has no busduct category, so busduct runs, elbow, tee, flanged end, end caps, hangers and tap-offs are custom *Electrical Equipment* families with a parametric `Section Length`.
 - **Connectivity** — the busduct → tap-off → panel link is represented in three layers: geometry (busduct + cable trays with native fittings), **native power circuits** (MCC/DB fed from LVMDP-01, route noted in circuit comments) and shared parameters (`Connected From`, `Connected To`, `Busduct`).
 - **Loads** — Mechanical Equipment families with a Power–Balanced connector (voltage, poles, apparent load, PF 0.85).
-- **QC** — 0 clashes with columns/beams/roof, all 50 equipment have IDs, all 10 loads circuited, busduct centreline consistent at +5800 mm.
+- **Outgoing cable trays** — each panel's outgoing tray (with tees/cross) drops onto every load it feeds: PM-01, MTR-01, CNC-01 (MCC-01), PM-02, PM-03, CNC-02 (DB-PROD), COMP-01, PMP-01, VF-01 (DB-UTIL), AC-01 (DB-OFFICE).
+- **QC** — 0 clashes between cable trays and busduct/equipment, 0 clashes with columns/beams/roof (wall crossings are intentional penetrations only), all 50 equipment have IDs, all 10 loads circuited and reached by a tray, busduct centreline consistent at +5800 mm.
+- **Revision (26-09-2026)** — CT-OFF (LVMDP → DB-OFFICE) rerouted to x = 7.1 m to clear the vertical busduct BUS-01.1; outgoing trays extended to every load.
 
 ## Files
 
