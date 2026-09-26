@@ -38,5 +38,6 @@ Flow: **LVMDP → horizontal feeder busduct → elbow → vertical riser → tap
 - Clash check: 0 clashes of busduct, cable trays and conduits with columns, stairs, walls, tap-offs, equipment and luminaires. Remaining intersections are intentional: wall penetrations of busduct/trays, socket conduits cast in the slab and entering the floor boxes.
 - Feeder tray enters each tap-off below the MCCB operating handle; the branch tray drops onto the AHU on every floor; every luminaire (40) and floor box (20) is reached by a conduit.
 - Interior walls stop at the slab soffit (top offset −300 mm).
+- Slab openings for stair, lift and electrical shaft on every floor; the stair continues to a roof-access stair penthouse (3 m high, door to the roof). Stairs and railings: 0 clashes with slabs, walls and columns.
 
 All ratings are training examples, not a final electrical design.
