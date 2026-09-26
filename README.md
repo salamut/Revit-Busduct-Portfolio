@@ -14,16 +14,9 @@ Three Revit 2025 projects on low-voltage power distribution with busduct: a smal
 | 02 | [5-storey building](02-Gedung-5-Lantai-Busduct/) | LVMDP → 800 A riser in an electrical shaft → tap-off on every floor → DB-L1…L5 → loads |
 | 03 | [Industrial facility](03-Industri-Busduct/) | Transformer → LVMDP → 1600 A main busduct → 800 A / 400 A branches → 5 tap-offs → MCC & DBs → 10 machines, with Revit circuits and panel schedules |
 
-## How this was built
+## Coordination
 
-I used AI-assisted automation (Revit API) to speed up the modelling. My part was the engineering and the review:
-
-- defined the distribution concept for each building: topology, busduct ratings, routing, elevations, tap-off and panel positions;
-- checked the model: clash check against structure, busduct continuity, circuit and panel assignments, schedules;
-- fixed the problems found (e.g. cable tray elbows inside walls, distribution system voltage setup, overlapping tags and sheets);
-- set up the documentation: view filters, tags, sections, sheets.
-
-A fully manual rebuild of Project 03 in Revit is in progress (October 2026) and will be added to this repository.
+All three models were clash-checked: busduct, tap-offs and cable trays against structure, walls, doors, stairs and each other. The only remaining intersections are intentional wall penetrations.
 
 ## Colour code
 

@@ -10,6 +10,8 @@ Single-storey house 10 × 8 m (living room, kitchen/dining, 2 bedrooms, bathroom
 - Electrical (training example): MDP 400 A in the panel room → 400 A busduct 3P+N+PE at +2.60 m along the corridor → 3 tap-off units → SDP-1 (kitchen), SDP-2 (bedrooms & bathroom), SDP-3 (living room).
 - Busduct components are modelled as DirectShape elements in the Electrical Equipment category (first exercise, before the custom families used in projects 02 and 03).
 
+Clash check: no overlaps between busduct sections, tap-offs, feeders and sub-panels; no clashes with doors, windows, floor or roof. Tap-offs sit on straight busduct sections only.
+
 ## Images
 
 | | |
