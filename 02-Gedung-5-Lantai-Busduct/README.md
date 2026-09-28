@@ -14,6 +14,10 @@ Office building 20 × 15 m, 5 floors at 4 m. A vertical LV busduct runs inside a
 | Floor boards | DB-L1…DB-L5 (panelboard family), feeder cable tray from tap-off |
 | Loads per floor | 8 LED panels, 4 floor-box sockets, 1 AHU 11 kW |
 | Final circuits | Lighting: EMT 20 mm conduit from the branch tray, running over each row of luminaires. Sockets: RNC 25 mm conduit cast in the slab from the bottom of DB-Lx to the 4 floor boxes |
+| Lighting control | One 2-gang switch per floor (SW-L1…L5, +1200 mm on the core wall next to the electrical room): gang a = north row, gang b = south row. Switch leg in EMT 20 mm concealed in the wall up to the lighting conduit |
+| Electrical system | 400/230 V 3P4W distribution system on LVMDP and DB-L1…L5. Native Revit circuits per floor: C1 lighting (MCB 10 A), C2/4/6 AHU 3-phase (MCB 3P 25 A), C3 floor-box sockets (RCBO 16 A 30 mA). DB-Lx fed from LVMDP through its tap-off (MCCB 250 A) |
+| Wiring | Revit wires on every floor plan: arcs between luminaires and floor boxes, switch leg, and home runs (arrow) to DB-Lx |
+| Loads per DB | 13.9 kVA (lighting 352 VA, sockets 800 VA, AHU 12.9 kVA); LVMDP total 69.4 kVA |
 
 Flow: **LVMDP → horizontal feeder busduct → elbow → vertical riser → tap-off → feeder tray → DB-Lx → branch tray / conduit → loads**.
 
@@ -28,11 +32,13 @@ Flow: **LVMDP → horizontal feeder busduct → elbow → vertical riser → tap
 
 ## Sheets
 
-[`sheets/Gedung5Lt_Busduct_Sheets.pdf`](sheets/Gedung5Lt_Busduct_Sheets.pdf) — E-001 3D isometric + legend, E-101 ground floor, E-102 typical floor, E-201 riser section, E-202 electrical distribution schedule, E-301 load schedule. PNG per sheet in [`sheets/png`](sheets/png).
+[`sheets/Gedung5Lt_Busduct_Sheets.pdf`](sheets/Gedung5Lt_Busduct_Sheets.pdf) — E-001 3D isometric + legend, E-101 ground floor, E-102 typical floor, E-201 riser section, E-202 electrical distribution schedule, E-301 load schedule, E-302/E-303 panel schedules (DB-L1…L5, LVMDP) and circuit schedule. PNG per sheet in [`sheets/png`](sheets/png).
 
 ## Modelling notes
 
-- Custom families (Electrical Equipment): busduct vertical/horizontal section with `Section Length`, elbow, joint pack, fire barrier, tap-off, end cap, flanged end, LVMDP switchboard.
+- Custom families (Electrical Equipment): busduct vertical/horizontal section with `Section Length`, elbow, joint pack, fire barrier, tap-off, end cap, flanged end, LVMDP switchboard (with a 400 V electrical connector so it can act as the source panel). Light switch: face-based `LD_Light Switch 2-Gang`.
+- Load data set to Indonesian values: luminaires 230 V 44 VA, floor boxes 230 V 200 VA, AHU 400 V 3-phase 12.9 kVA. The Autodesk panelboard family connector was changed from 480 V to 400 V, because Revit only accepts a distribution system that matches the panel's connector voltage.
+- Switching groups are recorded in the shared parameter `Switch Group` and shown on the plans (a / b).
 - Shared parameters: Component Name, Component Type, Busduct Rating, Rating, Voltage, Phase, Floor, Panel Name, Connected Panel, System Type.
 - View filters colour the system (busduct orange, panels red, feeder tray green, branch tray blue, conduit amber, loads purple).
 - Clash check: 0 clashes of busduct, cable trays and conduits with columns, stairs, walls, tap-offs, equipment and luminaires. Remaining intersections are intentional: wall penetrations of busduct/trays, socket conduits cast in the slab and entering the floor boxes.
